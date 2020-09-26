@@ -6,6 +6,8 @@
   http-kit/http-kit {:mvn/version "2.5.0"}}
 
  :aliases
- {:metav {:extra-deps {metav/metav {:mvn/version "1.6.7"}}}
-  :artifact-name {:main-opts ["-m" "metav.display"]}
-  :release {:main-opts ["-m" "metav.release"]}}}
+ {:metav {:extra-deps {jgrodziski/metav {:git/url "https://github.com/jgrodziski/metav"
+                                         :sha "23ac1c0f865d853fe60acad4e0ef780bc96efef7"}}}
+  :artifact-name {:main-opts ["-m" "metav.display" "-c" "./metav.edn"]}
+  :release {:main-opts ["-m" "metav.release" "-c" "./metav.edn"]}
+  :spit {:main-opts ["-m" "metav.spit" "-c" "./metav.edn"]}}}
