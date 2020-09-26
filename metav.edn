@@ -5,4 +5,6 @@
  :metav.spit/namespace "version"
  :metav.spit/output-dir "."
  :metav.spit/pom true
+ :metav.git/without-sign true
+ :metav/version-scheme :semver
  :metav.release/without-push true}
