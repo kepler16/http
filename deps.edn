@@ -10,4 +10,9 @@
                                          :sha "23ac1c0f865d853fe60acad4e0ef780bc96efef7"}}}
   :artifact-name {:main-opts ["-m" "metav.display" "-c" "./metav.edn"]}
   :release {:main-opts ["-m" "metav.release" "-c" "./metav.edn"]}
-  :spit {:main-opts ["-m" "metav.spit" "-c" "./metav.edn"]}}}
+  :spit {:main-opts ["-m" "metav.spit" "-c" "./metav.edn"]}
+  :pack {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
+                                       :sha "c70740ffc10805f34836da2160fa1899601fac02"}}
+         :main-opts ["-m"]}
+  :build-lib {:main-opts ["-m" "mach.pack.alpha.skinny" "--no-libs"
+                          "--project-path" "target/lib.jar"]}}}
