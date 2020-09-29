@@ -14,6 +14,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Publish package
-        run: ./deploy
+        run: ./deploy.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
