@@ -20,12 +20,16 @@ jobs:
           # To use Clojure CLI 1.10.1.561 based on tools.deps
           cli: '1.10.1.469'
 
+      - name: Update POM
+        run: clojure -Spom
+
       - name: Build jar
         run: clojure -A:pack:build-lib
 
       - uses: s4u/maven-settings-action@v2.2.0
         with:
           servers: '[{"id": "github", "username": "${{secrets.ORG_GITHUB_ACTOR}}", "password": "${{secrets.ORG_GITHUB_TOKEN}}"}]'
+          githubServer: false
 
       - name: Publish package
         run:  clojure -A:deploy | sh

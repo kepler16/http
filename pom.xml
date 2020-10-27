@@ -4,7 +4,7 @@
   <packaging>jar</packaging>
   <groupId>kepler16</groupId>
   <artifactId>http</artifactId>
-  <version>0.2.4</version>
+  <version>0.2.5</version>
   <name>http</name>
   <dependencies>
     <dependency>
@@ -45,6 +45,10 @@
     <repository>
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
+    </repository>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/kepler16/*</url>
     </repository>
   </repositories>
 </project>
