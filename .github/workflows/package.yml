@@ -23,6 +23,10 @@ jobs:
       - name: Build jar
         run: clojure -A:pack:build-lib
 
+      - uses: s4u/maven-settings-action@v2.2.0
+        with:
+          servers: '[{"id": "github", "username": "${{secrets.ORG_GITHUB_ACTOR}}", "password": "${{secrets.ORG_GITHUB_TOKEN}}"}]'
+
       - name: Publish package
         run:  clojure -A:deploy | sh
         env:
