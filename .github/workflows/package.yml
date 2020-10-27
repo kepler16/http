@@ -24,6 +24,6 @@ jobs:
         run: clojure -A:pack:build-lib
 
       - name: Publish package
-        run:  clojure ./src/kepler16/deploy.clj | sh
+        run:  clojure -A:deploy | sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

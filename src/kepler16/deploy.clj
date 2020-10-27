@@ -80,10 +80,12 @@ query ($repo: String!, $org: String!, $version: String!) {
     :version
     zip-xml/text)))
 
-(println
- (deploy-github-maven-package {:token (System/getenv "GITHUB_TOKEN")
-                               :group-id (pom->group-id root)
-                               :artifact (pom->artifact root)
-                               :repo-id "github"
-                               :jar-file "target/lib.jar"
-                               :version (pom->version root)}))
+(defn -main [& args]
+
+  (println
+   (deploy-github-maven-package {:token (System/getenv "GITHUB_TOKEN")
+                                 :group-id (pom->group-id root)
+                                 :artifact (pom->artifact root)
+                                 :repo-id "github"
+                                 :jar-file "target/lib.jar"
+                                 :version (pom->version root)})))

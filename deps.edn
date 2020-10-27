@@ -10,8 +10,7 @@
   org.clojure/data.zip {:mvn/version "0.1.1"}}
 
  :aliases
- {:deploy {:extra-deps {clj-http/clj-http {:mvn/version "3.10.3"}}
-           :main-opts ["-m" "kepler16.deploy"]}
+ {:deploy {:main-opts ["-m" "kepler16.deploy"]}
 
   :metav {:extra-deps {jgrodziski/metav {:git/url "https://github.com/jgrodziski/metav"
                                          :sha "23ac1c0f865d853fe60acad4e0ef780bc96efef7"}}}
