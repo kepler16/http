@@ -1,9 +1,9 @@
 name: Publish package to GitHub Packages
 on:
   push:
-    branches:    
+    branches:
       - master
-    tags:        
+    tags:
       - "*"
 jobs:
   publish:
@@ -24,6 +24,6 @@ jobs:
         run: clj -A:pack:build-lib
 
       - name: Publish package
-        run: ./deploy.sh
+        run:  clj ./src/kepler16/deploy.clj | sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
