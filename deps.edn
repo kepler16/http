@@ -1,7 +1,7 @@
 {:mvn/repos {"github" {:url "https://maven.pkg.github.com/kepler16/*"}}
 
  :deps
- {ring/ring-core {:mvn/version "1.8.1"}
+ {ring/ring-core {:mvn/version "1.8.2"}
   ring/ring-jetty-adapter {:mvn/version "1.8.1"}
   integrant/integrant {:mvn/version "0.8.0"}
   metosin/reitit {:mvn/version "0.5.6"}
