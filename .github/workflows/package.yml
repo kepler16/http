@@ -21,9 +21,9 @@ jobs:
           cli: '1.10.1.469'
 
       - name: Build jar
-        run: clj -A:pack:build-lib
+        run: clojure -A:pack:build-lib
 
       - name: Publish package
-        run:  clj ./src/kepler16/deploy.clj | sh
+        run:  clojure ./src/kepler16/deploy.clj | sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
