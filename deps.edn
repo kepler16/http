@@ -1,22 +1,15 @@
-{:deps
+{:mvn/repos {"github" {:url "https://maven.pkg.github.com/kepler16/*"}}
+
+ :deps
  {ring/ring-core {:mvn/version "1.8.1"}
   ring/ring-jetty-adapter {:mvn/version "1.8.1"}
   integrant/integrant {:mvn/version "0.8.0"}
   metosin/reitit {:mvn/version "0.5.6"}
-  http-kit/http-kit {:mvn/version "2.5.0"}
-  clj-http/clj-http {:mvn/version "3.10.3"}
-  metosin/jsonista {:mvn/version "0.2.7"}
-  org.clojure/data.xml {:mvn/version "0.2.0-alpha6"}
-  org.clojure/data.zip {:mvn/version "0.1.1"}}
+  http-kit/http-kit {:mvn/version "2.5.0"}}
 
  :aliases
- {:deploy {:main-opts ["-m" "kepler16.deploy"]}
-
-  :metav {:extra-deps {jgrodziski/metav {:git/url "https://github.com/jgrodziski/metav"
-                                         :sha "23ac1c0f865d853fe60acad4e0ef780bc96efef7"}}}
-  :artifact-name {:main-opts ["-m" "metav.display" "-c" "./metav.edn"]}
-  :release {:main-opts ["-m" "metav.release" "-c" "./metav.edn"]}
-  :spit {:main-opts ["-m" "metav.spit" "-c" "./metav.edn"]}
+ {:deploy {:extra-deps {kepler16/deploy {:mvn/version "0.0.1"}}
+           :main-opts ["-m" "kepler16.deploy"]}
   :pack {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
                                        :sha "c70740ffc10805f34836da2160fa1899601fac02"}}
          :main-opts ["-m"]}
