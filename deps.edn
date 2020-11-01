@@ -8,7 +8,15 @@
   http-kit/http-kit {:mvn/version "2.5.0"}}
 
  :aliases
- {:build {:extra-deps {kepler16/deploy {:mvn/version "0.0.4"}}}
-  :deploy {:main-opts ["-m" "kepler16.deploy"]}
+ {:build {:extra-deps {kepler16/deploy {:mvn/version "0.0.5"}}}
+
+  :generate-pom {:exec-fn kepler16.deploy/pom!
+                 :exec-args {:group-id "kepler16"
+                             :package-name "deploy-name"
+                             :version "0.0.5"}}
+
   :build-lib {:main-opts ["-m" "mach.pack.alpha.skinny" "--no-libs"
-                          "--project-path" "target/lib.jar"]}}}
+                          "--project-path" "target/lib.jar"]}
+
+  :deploy {:exec-fn kepler16.deploy/deploy!
+           :exec-args {}}}}
