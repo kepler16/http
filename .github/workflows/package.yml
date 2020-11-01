@@ -29,8 +29,8 @@ jobs:
       - run: clojure -Spom
 
       # weird 2 pass thing to avoid overwriting file while reading it
-      - run: clojure -X:generate-pom > p.xml && mv p.xml pom.xml
+      - run: clojure -X:build:generate-pom > p.xml && mv p.xml pom.xml
 
       - run: clojure -A:build:build-lib
 
-      - run:  clojure -X:deploy | sh
+      - run:  clojure -X:build:deploy | sh
