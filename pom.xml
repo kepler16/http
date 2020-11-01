@@ -4,7 +4,7 @@
   <packaging>jar</packaging>
   <groupId>kepler16</groupId>
   <artifactId>http</artifactId>
-  <version>0.2.5</version>
+  <version>0.2.6</version>
   <name>http</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
