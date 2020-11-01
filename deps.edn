@@ -12,8 +12,8 @@
 
   :generate-pom {:exec-fn kepler16.deploy/pom!
                  :exec-args {:group-id "kepler16"
-                             :package-name "deploy-name"
-                             :version "0.0.5"}}
+                             :package-name "http"
+                             :version "0.2.6"}}
 
   :build-lib {:main-opts ["-m" "mach.pack.alpha.skinny" "--no-libs"
                           "--project-path" "target/lib.jar"]}
