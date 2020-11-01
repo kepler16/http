@@ -8,7 +8,7 @@
   http-kit/http-kit {:mvn/version "2.5.0"}}
 
  :aliases
- {:deployer {:extra-deps {kepler16/deploy {:mvn/version "0.0.5"}}}
+ {:deployer {:extra-deps {kepler16/deploy {:mvn/version "0.0.6"}}}
 
   :generate-pom {:exec-fn kepler16.deploy/pom!
                  :exec-args {:group-id "kepler16"
