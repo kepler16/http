@@ -1,22 +1,18 @@
 {:mvn/repos {"github" {:url "https://maven.pkg.github.com/kepler16/*"}}
 
  :deps
- {ring/ring-core {:mvn/version "1.8.2"}
-  ring/ring-jetty-adapter {:mvn/version "1.8.2"}
-  integrant/integrant {:mvn/version "0.8.0"}
-  metosin/reitit {:mvn/version "0.5.10"}
-  http-kit/http-kit {:mvn/version "2.5.0"}}
+ {ring/ring-core {:mvn/version "1.9.2"}
+  ring/ring-jetty-adapter {:mvn/version "1.9.2"}
+  metosin/reitit {:mvn/version "0.5.12"}
+  http-kit/http-kit {:mvn/version "2.5.3"}}
 
  :aliases
- {:deployer {:extra-deps {kepler16/deploy {:mvn/version "0.0.8"}}}
-
-  :generate-pom {:exec-fn kepler16.deploy/pom!
-                 :exec-args {:group-id "kepler16"
-                             :package-name "http"
-                             :version "0.2.8"}}
-
-  :build {:exec-fn kepler16.deploy/build!
-          :exec-args {}}
-
-  :deploy {:exec-fn kepler16.deploy/deploy!
-           :exec-args {}}}}
+ {:deploy! {:extra-deps {kepler16/deploy {:mvn/version "0.1.0"}}
+            :exec-fn kepler16.deploy/build-and-deploy!
+            :exec-args {:jar "target/lib.jar"
+                        :jar-type :thin
+                        :sync-pom true
+                        :verbose true
+                        :group-id kepler16
+                        :artifact-id http
+                        :version "0.2.10"}}}}

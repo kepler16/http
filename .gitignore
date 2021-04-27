@@ -2,3 +2,5 @@
 target
 /.nrepl-port
 pom.xml
+/.lsp/
+/telepresence.log
